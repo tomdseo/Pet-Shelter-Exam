@@ -1,0 +1,23 @@
+<div class="mb-4">
+  <h5>These Pets Are Looking for A Home!</h5>
+  <a class="" [routerLink] = "['/pets/new']">Add Pet to Shelter</a>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Type</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="pets">
+  <tr *ngFor="let pet of pets">
+    <td>{{ pet.name }}</td>
+    <td>{{ pet.type }}</td>
+    <td>
+      <a class="btn btn-primary btn-sm" style="min-width: 70px;" [routerLink] = "['/pets/', pet._id]">Details</a>
+      <a class="btn btn-secondary btn-sm ml-3" style="min-width: 70px;" [routerLink] = "['/pets/'+pet._id+'/edit']">Edit</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

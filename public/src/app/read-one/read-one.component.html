@@ -1,0 +1,25 @@
+<div *ngIf="pet">
+  <div class="mb-4">
+    <h5>Details about <mark>{{pet.name }}</mark></h5>
+  </div>
+  <h5 class="mb-4">Pet Type: <p class="lead d-inline-block"><mark>{{ pet.type }}</mark></p></h5>
+  <h5 class="mb-4">Description: <p class="lead d-inline-block"><mark>{{ pet.description }}</mark></p></h5>
+
+  <h5 class="mb-3">Pet Skills: </h5>
+  <ul class="mb-4">
+    <li>
+      <p class="lead text-muted"><mark>{{ pet.skill1 }}</mark></p>
+    </li>
+    <li>
+      <p class="lead text-muted"><mark>{{ pet.skill2 }}</mark></p>
+    </li>
+    <li>
+      <p class="lead text-muted"><mark>{{ pet.skill3 }}</mark></p>
+    </li>
+  </ul>
+
+  <h5 class="mb-4">Likes: <p class="lead d-inline-block"><mark>{{ pet.likes }}</mark></p></h5>
+
+  <button (click)="onLikePet()" [disabled]="liked" class="btn btn-primary mr-3">Like This Pet</button>
+  <button (click)="onAdoptPet()" class="btn btn-secondary">Adopt This pet</button>
+</div>
